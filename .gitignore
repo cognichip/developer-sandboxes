@@ -1,0 +1,13 @@
+# Go workspace files
+**/go.work
+**/go.work.sum  
+.cache
+.cache/*
+# Temporary directory
+**/tmp/
+.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
