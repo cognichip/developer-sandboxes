@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/interview_db
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app/app
+    networks:
+      - interview-network
+
+  db:
+    image: postgres:17
+    environment:
+      - POSTGRES_DB=interview_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - interview-network
+
+volumes:
+  postgres_data:
+
+networks:
+  interview-network:
+    driver: bridge
