@@ -6,7 +6,7 @@ Empty Golang, Python and React Dockerized projects for use in developer
 ```
 developer-sandboxes/
 ├── python/          # Python implementation with FastAPI
-└── go/             # Go implementation with Gin
+└── go/             # Go implementation with Chi
 ```
 
 Each implementation includes:
